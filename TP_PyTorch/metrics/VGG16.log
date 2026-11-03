@@ -1,0 +1,121 @@
+Device: cuda
+NVIDIA GeForce RTX 3050 Laptop GPU
+Effectifs : 50000, 10000, 10000 ; empreinte : a448c5b6b20079fc657a6c5eee8ec6b22bdd1f0c1e76c9655deb217485cf2bb5
+/home/ossel/Projects/pytorch-mnist-architectures/TP_PyTorch/03_VGG16.py:51: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show(block=False)
+/home/ossel/Projects/pytorch-mnist-architectures/TP_PyTorch/03_VGG16.py:52: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.pause(0.001)
+VGG(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU(inplace=True)
+    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (5): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (6): ReLU(inplace=True)
+    (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): ReLU(inplace=True)
+    (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (10): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): ReLU(inplace=True)
+    (12): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (13): ReLU(inplace=True)
+    (14): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): ReLU(inplace=True)
+    (16): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (17): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): ReLU(inplace=True)
+    (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (20): ReLU(inplace=True)
+    (21): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): ReLU(inplace=True)
+    (26): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (27): ReLU(inplace=True)
+    (28): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (29): ReLU(inplace=True)
+    (30): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(7, 7))
+  (classifier): Sequential(
+    (0): Linear(in_features=25088, out_features=4096, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=4096, out_features=4096, bias=True)
+    (4): ReLU(inplace=True)
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=4096, out_features=10, bias=True)
+  )
+)
+Paramètres entraînables : 119,586,826 / 134,301,514
+Époque 1/3:   0%|          | 0/3125 [00:00<?, ?it/s]Époque 1/3:  11%|█         | 346/3125 [00:20<02:41, 17.26it/s]Époque 1/3:  11%|█         | 346/3125 [00:40<02:41, 17.26it/s]Époque 1/3:  22%|██▏       | 682/3125 [00:40<02:23, 16.98it/s]Époque 1/3:  22%|██▏       | 682/3125 [01:00<02:23, 16.98it/s]Époque 1/3:  33%|███▎      | 1023/3125 [01:00<02:03, 16.99it/s]Époque 1/3:  33%|███▎      | 1023/3125 [01:20<02:03, 16.99it/s]Époque 1/3:  44%|████▍     | 1381/3125 [01:20<01:40, 17.34it/s]Époque 1/3:  44%|████▍     | 1381/3125 [01:40<01:40, 17.34it/s]Époque 1/3:  55%|█████▌    | 1725/3125 [01:40<01:20, 17.29it/s]Époque 1/3:  55%|█████▌    | 1725/3125 [02:00<01:20, 17.29it/s]Époque 1/3:  66%|██████▋   | 2071/3125 [02:00<01:00, 17.29it/s]Époque 1/3:  66%|██████▋   | 2071/3125 [02:20<01:00, 17.29it/s]Époque 1/3:  77%|███████▋  | 2419/3125 [02:20<00:40, 17.31it/s]Époque 1/3:  77%|███████▋  | 2419/3125 [02:40<00:40, 17.31it/s]Époque 1/3:  89%|████████▉ | 2776/3125 [02:40<00:19, 17.47it/s]Époque 1/3:  89%|████████▉ | 2776/3125 [03:00<00:19, 17.47it/s]Époque 1/3: 100%|█████████▉| 3122/3125 [03:00<00:00, 17.41it/s]Époque 1/3: 100%|██████████| 3125/3125 [03:00<00:00, 17.32it/s]
+Époque 1 : {"train_loss": 0.30991236611366274, "val_loss": 0.12697475283145904, "train_accuracy": 0.8995, "val_accuracy": 0.9598}
+Époque 2/3:   0%|          | 0/3125 [00:00<?, ?it/s]Époque 2/3:  11%|█▏        | 353/3125 [00:20<02:37, 17.64it/s]Époque 2/3:  11%|█▏        | 353/3125 [00:39<02:37, 17.64it/s]Époque 2/3:  22%|██▏       | 702/3125 [00:40<02:18, 17.50it/s]Époque 2/3:  22%|██▏       | 702/3125 [00:59<02:18, 17.50it/s]Époque 2/3:  34%|███▎      | 1050/3125 [01:00<01:58, 17.44it/s]Époque 2/3:  34%|███▎      | 1050/3125 [01:19<01:58, 17.44it/s]Époque 2/3:  45%|████▍     | 1399/3125 [01:20<01:38, 17.45it/s]Époque 2/3:  45%|████▍     | 1399/3125 [01:39<01:38, 17.45it/s]Époque 2/3:  56%|█████▌    | 1748/3125 [01:40<01:18, 17.44it/s]Époque 2/3:  56%|█████▌    | 1748/3125 [01:59<01:18, 17.44it/s]Époque 2/3:  67%|██████▋   | 2093/3125 [02:00<00:59, 17.36it/s]Époque 2/3:  67%|██████▋   | 2093/3125 [02:19<00:59, 17.36it/s]Époque 2/3:  78%|███████▊  | 2443/3125 [02:20<00:39, 17.41it/s]Époque 2/3:  78%|███████▊  | 2443/3125 [02:39<00:39, 17.41it/s]Époque 2/3:  89%|████████▉ | 2793/3125 [02:40<00:19, 17.44it/s]Époque 2/3: 100%|██████████| 3125/3125 [02:59<00:00, 17.44it/s]
+Époque 2 : {"train_loss": 0.1594820735168457, "val_loss": 0.12044692180156708, "train_accuracy": 0.94804, "val_accuracy": 0.9632}
+Époque 3/3:   0%|          | 0/3125 [00:00<?, ?it/s]Époque 3/3:  11%|█         | 350/3125 [00:20<02:38, 17.49it/s]Époque 3/3:  11%|█         | 350/3125 [00:30<02:38, 17.49it/s]Époque 3/3:  22%|██▏       | 696/3125 [00:40<02:19, 17.36it/s]Époque 3/3:  22%|██▏       | 696/3125 [00:50<02:19, 17.36it/s]Époque 3/3:  34%|███▎      | 1047/3125 [01:00<01:59, 17.44it/s]Époque 3/3:  34%|███▎      | 1047/3125 [01:10<01:59, 17.44it/s]Époque 3/3:  45%|████▍     | 1394/3125 [01:20<01:39, 17.40it/s]Époque 3/3:  45%|████▍     | 1394/3125 [01:30<01:39, 17.40it/s]Époque 3/3:  56%|█████▌    | 1745/3125 [01:40<01:19, 17.44it/s]Époque 3/3:  56%|█████▌    | 1745/3125 [01:50<01:19, 17.44it/s]Époque 3/3:  67%|██████▋   | 2095/3125 [02:00<00:59, 17.45it/s]Époque 3/3:  67%|██████▋   | 2095/3125 [02:10<00:59, 17.45it/s]Époque 3/3:  78%|███████▊  | 2448/3125 [02:20<00:38, 17.50it/s]Époque 3/3:  78%|███████▊  | 2448/3125 [02:30<00:38, 17.50it/s]Époque 3/3:  90%|████████▉ | 2799/3125 [02:40<00:18, 17.51it/s]Époque 3/3:  90%|████████▉ | 2799/3125 [02:50<00:18, 17.51it/s]Époque 3/3: 100%|██████████| 3125/3125 [02:58<00:00, 17.47it/s]
+Époque 3 : {"train_loss": 0.13194984723567962, "val_loss": 0.1006864699602127, "train_accuracy": 0.95714, "val_accuracy": 0.9683}
+/home/ossel/Projects/pytorch-mnist-architectures/TP_PyTorch/03_VGG16.py:51: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show(block=False)
+/home/ossel/Projects/pytorch-mnist-architectures/TP_PyTorch/03_VGG16.py:52: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.pause(0.001)
+{
+  "model": "VGG16",
+  "status": "complete",
+  "seed": 42,
+  "split_sha256": "a448c5b6b20079fc657a6c5eee8ec6b22bdd1f0c1e76c9655deb217485cf2bb5",
+  "train_samples": 50000,
+  "validation_samples": 10000,
+  "test_samples": 10000,
+  "epochs": 3,
+  "batch_size": 16,
+  "learning_rate": 0.001,
+  "accuracy": 0.9687,
+  "macro_precision": 0.9688074966168336,
+  "macro_recall": 0.9683437741266709,
+  "macro_f1": 0.9684288937405233,
+  "test_loss": 0.09795521584749221,
+  "final_train_loss": 0.13194984723567962,
+  "final_validation_loss": 0.1006864699602127,
+  "training_seconds": 567.6698119410003,
+  "timing_includes_validation": true,
+  "trainable_parameters": 119586826,
+  "total_parameters": 134301514,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "python": "3.14.7",
+  "torch": "2.15.0+cu132",
+  "torchvision": "0.29.2+cu132",
+  "cuda": "13.2",
+  "amp": true,
+  "peak_gpu_memory_mb": 1882.5126953125,
+  "history": {
+    "train_loss": [
+      0.30991236611366274,
+      0.1594820735168457,
+      0.13194984723567962
+    ],
+    "val_loss": [
+      0.12697475283145904,
+      0.12044692180156708,
+      0.1006864699602127
+    ],
+    "train_accuracy": [
+      0.8995,
+      0.94804,
+      0.95714
+    ],
+    "val_accuracy": [
+      0.9598,
+      0.9632,
+      0.9683
+    ]
+  }
+}
+/home/ossel/Projects/pytorch-mnist-architectures/TP_PyTorch/03_VGG16.py:51: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show(block=False)
+/home/ossel/Projects/pytorch-mnist-architectures/TP_PyTorch/03_VGG16.py:52: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.pause(0.001)
+Expérience terminée : VGG16 ; résultats dans /home/ossel/Projects/pytorch-mnist-architectures/TP_PyTorch/metrics

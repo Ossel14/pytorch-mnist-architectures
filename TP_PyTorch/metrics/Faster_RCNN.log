@@ -1,0 +1,111 @@
+Device: cuda
+NVIDIA GeForce RTX 3050 Laptop GPU
+Effectifs : 50000 / 10000 / 10000 ; empreinte : a448c5b6b20079fc657a6c5eee8ec6b22bdd1f0c1e76c9655deb217485cf2bb5
+/home/ossel/Projects/pytorch-mnist-architectures/TP_PyTorch/02_Faster_RCNN.py:58: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show(block=False)
+/home/ossel/Projects/pytorch-mnist-architectures/TP_PyTorch/02_Faster_RCNN.py:59: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.pause(0.001)
+FasterRCNN(
+  (transform): GeneralizedRCNNTransform(
+      Normalize(mean=[0.1307, 0.1307, 0.1307], std=[0.3081, 0.3081, 0.3081])
+      Resize(min_size=(28,), max_size=28, mode='bilinear')
+  )
+  (backbone): Sequential(
+    (0): Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU()
+    (2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (3): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): ReLU()
+    (5): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (rpn): RegionProposalNetwork(
+    (anchor_generator): AnchorGenerator()
+    (head): RPNHead(
+      (conv): Sequential(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): ReLU(inplace=True)
+        )
+      )
+      (cls_logits): Conv2d(64, 12, kernel_size=(1, 1), stride=(1, 1))
+      (bbox_pred): Conv2d(64, 48, kernel_size=(1, 1), stride=(1, 1))
+    )
+  )
+  (roi_heads): RoIHeads(
+    (box_roi_pool): MultiScaleRoIAlign(featmap_names=['0'], output_size=(3, 3), sampling_ratio=2)
+    (box_head): TwoMLPHead(
+      (fc6): Linear(in_features=576, out_features=128, bias=True)
+      (fc7): Linear(in_features=128, out_features=128, bias=True)
+    )
+    (box_predictor): FastRCNNPredictor(
+      (cls_score): Linear(in_features=128, out_features=11, bias=True)
+      (bbox_pred): Linear(in_features=128, out_features=44, bias=True)
+    )
+  )
+)
+Paramètres entraînables : 157683
+Époque 1/3:   0%|          | 0/3125 [00:00<?, ?it/s]Époque 1/3:  14%|█▍        | 446/3125 [00:20<02:00, 22.30it/s]Époque 1/3:  14%|█▍        | 446/3125 [00:40<02:00, 22.30it/s]Époque 1/3:  29%|██▉       | 910/3125 [00:40<01:37, 22.82it/s]Époque 1/3:  29%|██▉       | 910/3125 [01:00<01:37, 22.82it/s]Époque 1/3:  44%|████▍     | 1372/3125 [01:00<01:16, 22.92it/s]Époque 1/3:  44%|████▍     | 1372/3125 [01:20<01:16, 22.92it/s]Époque 1/3:  59%|█████▉    | 1836/3125 [01:20<00:55, 23.02it/s]Époque 1/3:  59%|█████▉    | 1836/3125 [01:40<00:55, 23.02it/s]Époque 1/3:  74%|███████▎  | 2297/3125 [01:40<00:35, 23.02it/s]Époque 1/3:  74%|███████▎  | 2297/3125 [02:00<00:35, 23.02it/s]Époque 1/3:  88%|████████▊ | 2759/3125 [02:00<00:15, 23.04it/s]Époque 1/3: 100%|██████████| 3125/3125 [02:15<00:00, 22.99it/s]
+Époque 1 : {"train_loss": 0.44006228630542754, "val_loss": 0.28987771973609927, "val_accuracy": 0.9698}
+Époque 2/3:   0%|          | 0/3125 [00:00<?, ?it/s]Époque 2/3:  14%|█▍        | 453/3125 [00:20<01:58, 22.60it/s]Époque 2/3:  14%|█▍        | 453/3125 [00:31<01:58, 22.60it/s]Époque 2/3:  29%|██▉       | 908/3125 [00:40<01:37, 22.68it/s]Époque 2/3:  29%|██▉       | 908/3125 [00:51<01:37, 22.68it/s]Époque 2/3:  44%|████▍     | 1379/3125 [01:00<01:15, 23.07it/s]Époque 2/3:  44%|████▍     | 1379/3125 [01:11<01:15, 23.07it/s]Époque 2/3:  59%|█████▉    | 1850/3125 [01:20<00:54, 23.25it/s]Époque 2/3:  59%|█████▉    | 1850/3125 [01:31<00:54, 23.25it/s]Époque 2/3:  74%|███████▍  | 2324/3125 [01:40<00:34, 23.40it/s]Époque 2/3:  74%|███████▍  | 2324/3125 [01:51<00:34, 23.40it/s]Époque 2/3:  90%|████████▉ | 2797/3125 [02:00<00:13, 23.48it/s]Époque 2/3:  90%|████████▉ | 2797/3125 [02:11<00:13, 23.48it/s]Époque 2/3: 100%|██████████| 3125/3125 [02:14<00:00, 23.31it/s]
+Époque 2 : {"train_loss": 0.2569648090839386, "val_loss": 0.23577459056377412, "val_accuracy": 0.9761}
+Époque 3/3:   0%|          | 0/3125 [00:00<?, ?it/s]Époque 3/3:  14%|█▍        | 452/3125 [00:20<01:58, 22.55it/s]Époque 3/3:  14%|█▍        | 452/3125 [00:35<01:58, 22.55it/s]Époque 3/3:  28%|██▊       | 888/3125 [00:40<01:41, 22.11it/s]Époque 3/3:  28%|██▊       | 888/3125 [00:55<01:41, 22.11it/s]Époque 3/3:  37%|███▋      | 1166/3125 [01:00<01:46, 18.34it/s]Époque 3/3:  37%|███▋      | 1166/3125 [01:15<01:46, 18.34it/s]Époque 3/3:  48%|████▊     | 1499/3125 [01:20<01:32, 17.66it/s]Époque 3/3:  48%|████▊     | 1499/3125 [01:35<01:32, 17.66it/s]Époque 3/3:  59%|█████▊    | 1829/3125 [01:40<01:15, 17.22it/s]Époque 3/3:  59%|█████▊    | 1829/3125 [01:55<01:15, 17.22it/s]Époque 3/3:  69%|██████▉   | 2158/3125 [02:00<00:57, 16.96it/s]Époque 3/3:  69%|██████▉   | 2158/3125 [02:15<00:57, 16.96it/s]Époque 3/3:  80%|███████▉  | 2486/3125 [02:20<00:38, 16.76it/s]Époque 3/3:  80%|███████▉  | 2486/3125 [02:35<00:38, 16.76it/s]Époque 3/3:  90%|█████████ | 2819/3125 [02:40<00:18, 16.72it/s]Époque 3/3:  90%|█████████ | 2819/3125 [02:55<00:18, 16.72it/s]Époque 3/3: 100%|██████████| 3125/3125 [02:58<00:00, 17.48it/s]
+Époque 3 : {"train_loss": 0.22548642564058305, "val_loss": 0.22014285864830016, "val_accuracy": 0.9829}
+/home/ossel/Projects/pytorch-mnist-architectures/TP_PyTorch/02_Faster_RCNN.py:58: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show(block=False)
+/home/ossel/Projects/pytorch-mnist-architectures/TP_PyTorch/02_Faster_RCNN.py:59: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.pause(0.001)
+{
+  "model": "Faster_RCNN",
+  "status": "complete",
+  "seed": 42,
+  "split_sha256": "a448c5b6b20079fc657a6c5eee8ec6b22bdd1f0c1e76c9655deb217485cf2bb5",
+  "train_samples": 50000,
+  "validation_samples": 10000,
+  "test_samples": 10000,
+  "epochs": 3,
+  "batch_size": 16,
+  "learning_rate": 0.001,
+  "accuracy": 0.9867,
+  "macro_precision": 0.9867450227999901,
+  "macro_recall": 0.9865402419569012,
+  "macro_f1": 0.9866092517383965,
+  "no_detection": 0,
+  "mean_top_detection_iou": 0.916550811624527,
+  "correct_class_and_iou50": 0.9864,
+  "final_train_loss": 0.22548642564058305,
+  "final_validation_loss": 0.22014285864830016,
+  "training_seconds": 594.040062817,
+  "timing_includes_validation": true,
+  "trainable_parameters": 157683,
+  "total_parameters": 157683,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "python": "3.14.7",
+  "torch": "2.15.0+cu132",
+  "torchvision": "0.29.2+cu132",
+  "cuda": "13.2",
+  "amp": true,
+  "peak_gpu_memory_mb": 15.90576171875,
+  "history": {
+    "train_loss": [
+      0.44006228630542754,
+      0.2569648090839386,
+      0.22548642564058305
+    ],
+    "val_loss": [
+      0.28987771973609927,
+      0.23577459056377412,
+      0.22014285864830016
+    ],
+    "val_accuracy": [
+      0.9698,
+      0.9761,
+      0.9829
+    ]
+  }
+}
+/home/ossel/Projects/pytorch-mnist-architectures/TP_PyTorch/02_Faster_RCNN.py:58: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show(block=False)
+/home/ossel/Projects/pytorch-mnist-architectures/TP_PyTorch/02_Faster_RCNN.py:59: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.pause(0.001)
+Expérience terminée : Faster R-CNN
